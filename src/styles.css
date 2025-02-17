@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .animate-marquee {
+      display: flex;
+      animation: marquee 15s linear infinite;
+    }
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  body {
+    background: #050506;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: white; /* Ensures text is visible on dark background */
+    font-family: 'Inter', sans-serif; /* Use a clean font */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}

@@ -1,0 +1,66 @@
+<footer class="bg-black text-white py-10 px-6 mt-10 border-t border-blue-500">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between">
+    <!-- Logo & Contact Section -->
+    <div class="space-y-4 md:w-1/3">
+      <img
+        src="https://dashboard.codeparrot.ai/api/image/Z7G__o9nxTWt8i9p/ad-task-a.png"
+        alt="adTask.ai"
+        class="w-40 md:w-64"
+      />
+
+      <div class="space-y-2">
+        <div class="flex items-center space-x-2">
+          <img
+            src="https://dashboard.codeparrot.ai/api/image/Z7G__o9nxTWt8i9p/mdi-emai.png"
+            alt="email"
+            class="w-6 h-6"
+          />
+          <a href="mailto:{{ contactInfo.email }}" class="hover:text-gray-300">
+            {{ contactInfo.email }}
+          </a>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <img
+            src="https://dashboard.codeparrot.ai/api/image/Z7G__o9nxTWt8i9p/mdi-addr.png"
+            alt="location"
+            class="w-6 h-6"
+          />
+          <span>{{ contactInfo.location }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Links Section -->
+    <div class="flex flex-wrap md:space-x-10 mt-6 md:mt-0">
+      <!-- Utilities -->
+      <div class="w-1/2 md:w-auto">
+        <h3 class="font-semibold text-lg mb-2">Utilities</h3>
+        <ul class="space-y-2">
+          <li *ngFor="let item of utilities">
+            <a [href]="item.link" class="hover:text-gray-300">{{
+              item.text
+            }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Socials -->
+      <div class="w-1/2 md:w-auto">
+        <h3 class="font-semibold text-lg mb-2">Socials</h3>
+        <ul class="space-y-2">
+          <li *ngFor="let item of socials">
+            <a [href]="item.link" class="hover:text-gray-300">{{
+              item.text
+            }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="mt-8 text-center text-gray-400">
+    All rights reserved © 2025 adTask
+  </div>
+</footer>

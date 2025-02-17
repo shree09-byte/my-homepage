@@ -1,0 +1,302 @@
+<div class="flex flex-col items-center px-4 lg:px-20 text-center gap-12">
+  <!-- Header Section -->
+  <div
+    style="
+      background: linear-gradient(
+        90deg,
+        rgba(142, 141, 141, 0.15) 0%,
+        rgba(40, 40, 40, 0.15) 100%
+      );
+    "
+    class="banner-container flex items-center justify-between bg-gradient-to-r h-[44px] pl-5 pr-5 rounded-xl shadow-lg"
+  >
+    <!-- Left Section: Icon -->
+    <div class="w-6 h-6">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M6.26045 0C6.92918 2.75561 8.29889 5.16613 12.5876 6.13864C8.40532 7.25586 7.15818 8.82341 6.39161 12.2145C5.45196 8.75358 4.56928 6.86625 0 6.13763C3.9242 5.10238 5.47668 2.94485 6.26045 0ZM16.2398 8.83859C15.1066 12.8237 12.7273 15.5713 8.21718 16.2048C13.5971 17.0143 15.3711 20.2071 16.2398 24C16.9655 19.5402 19.7092 17.1429 24 16.3272C19.8328 15.2646 17.0246 12.849 16.2398 8.83859Z"
+          fill="#D9D9D9"
+        />
+      </svg>
+    </div>
+
+    <!-- Right Section: Banner Text -->
+    <div class="content-wrapper flex flex-col items-center ml-4">
+      <span class="banner-text text-white text-lg"
+        >Transform Your Digital Presence with AI Agents</span
+      >
+    </div>
+  </div>
+
+  <!-- Logo Section -->
+  <div class="mt-6">
+    <img
+      [src]="logoUrl"
+      [width]="width"
+      [height]="height"
+      alt="AdTask.ai Logo"
+      class="w-[528px!important] md:w-56"
+    />
+  </div>
+
+  <!-- Description -->
+  <p class="max-w-xl text-gray-300 text-base md:text-lg mt-4">
+    Stop struggling with marketing decisions. Our AI assistant analyzes your
+    business, creates personalized strategies, and helps you execute them - all
+    in real-time.
+  </p>
+
+  <!-- Trial Button -->
+  <button
+    class="trial-button relative mt-6 text-white px-6 py-3 shadow-md transition"
+  >
+    {{ buttonText }}
+    <img [src]="particle1" class="absolute left-2 top-2 w-4 h-4" />
+    <img [src]="particle2" class="absolute right-2 bottom-2 w-4 h-4" />
+  </button>
+
+  <p class="text-xs text-gray-400 mt-2">Try AdTask AI free for 30 days</p>
+
+  <div class="video-container flex-col" [style]="containerStyle">
+    <img [src]="logoImage" [style]="logoStyle" alt="AdTask.ai Logo" />
+    <img
+      [src]="youtubeIcon"
+      [style]="youtubeStyle"
+      alt="YouTube Icon"
+      (click)="playVideo()"
+      [class.hover-effect]="true"
+      class="relative bottom-[80px]"
+    />
+  </div>
+
+  <!-- Logos Ticker -->
+  <div class="w-full overflow-hidden mt-6">
+    <div class="flex space-x-6 animate-marquee">
+      <div *ngFor="let logo of logos">
+        <img [src]="logo.imageUrl" [alt]="logo.name" class="h-12 w-auto" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <h2 class="text-xl text-white mt-10">AdTask AI works with:</h2>
+  <!-- <div class="grid grid-cols-6 gap-6 mt-6">
+    <div
+      *ngFor="let icon of socialIcons"
+      class="flex flex-col items-center space-y-2 h-[107px] w-[112px]"
+    >
+      <div
+        class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center"
+      >
+        <img [src]="icon.image" class="w-[130px] h-[149px]" />
+      </div>
+      <p class="text-sm text-gray-300">{{ icon.label }}</p>
+    </div>
+  </div> -->
+
+  <div class="icons-container">
+    <div *ngFor="let icon of socialIcons" class="icon-wrapper">
+      <div class="icon-frame">
+        <img [src]="icon.image" class="icon-image" alt="social icon" />
+        <div class="icon-overlay" *ngIf="icon.overlayImage">
+          <img [src]="icon.overlayImage" class="overlay-image" alt="overlay" />
+        </div>
+      </div>
+      <span class="icon-label">{{ icon.label }}</span>
+    </div>
+  </div>
+
+  <div
+    class="features-container"
+    [style.background]="backgroundColor"
+    [style.border]="border"
+    [style.border-radius]="borderRadius"
+    [style.cursor]="'pointer'"
+    (mouseenter)="onHover(true)"
+    (mouseleave)="onHover(false)"
+  >
+    <span class="features-text">{{ text }}</span>
+  </div>
+
+  <div class="feature-container" [style.gap.px]="gap">
+    <img [src]="line2Image" [style.width.px]="218" [style.height.px]="1" />
+    <div class="heading-text">
+      {{ text1 }}<br /><span class="span-text"
+        >Digital marketing easier and affordable.</span
+      >
+    </div>
+    <img [src]="line1Image" [style.width.px]="218" [style.height.px]="1" />
+  </div>
+
+  <div
+    style="
+      text-align: center;
+      color: #e2e8f8;
+      font-size: 16px;
+      font-family: Poppins;
+      font-weight: 400;
+      line-height: 22.4px;
+      word-wrap: break-word;
+    "
+  >
+    Experience Intelligent Features to optimize your marketing efforts.
+  </div>
+
+  <!-- Feature Cards -->
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      /* width: 100%; */
+      height: fit-content;
+      justify-content: space-between;
+    "
+  >
+    <app-reach-target-audience-card></app-reach-target-audience-card>
+    <app-marketing-made-easier-card-smart-marketing-insights-card></app-marketing-made-easier-card-smart-marketing-insights-card>
+    <app-intelligent-agents-card></app-intelligent-agents-card>
+  </div>
+
+  <div
+    class="services-button"
+    (click)="onClick()"
+    (mouseenter)="onMouseEnter()"
+    (mouseleave)="onMouseLeave()"
+  >
+    <span class="services-text">{{ text2 }}</span>
+  </div>
+  <div class="feature-container" [style.gap.px]="gap">
+    <img [src]="line2Image" [style.width.px]="218" [style.height.px]="1" />
+    <div class="heading-text">
+      {{ text3 }}<br /><span class="span-text">{{ text4 }}</span>
+    </div>
+    <img [src]="line1Image" [style.width.px]="218" [style.height.px]="1" />
+  </div>
+
+  <div
+    style="
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      /* gap: 32px; */
+      justify-content: center;
+      /* background-color: #1a1a1a; */
+      padding: 20px;
+    "
+  >
+    <app-smart-ad-targeting
+      style="display: flex; flex-direction: row"
+    ></app-smart-ad-targeting>
+    <app-performance-analytics
+      iconSrc="https://dashboard.codeparrot.ai/api/image/Z7Dph49nxTWt8i8E/eos-icon.png"
+      title="Performance Analytics"
+      style="display: flex; flex-direction: row"
+      description="Access real-time insights and track key metrics across all campaigns in one unified dashboard to quickly refine your strategies."
+    ></app-performance-analytics>
+    <app-seo-automation
+      iconSrc="https://dashboard.codeparrot.ai/api/image/Z7Dph49nxTWt8i8E/icon-par.png"
+      title="SEO Automation"
+      style="display: flex; flex-direction: row"
+      description="Automate keyword research and content optimization suggestions to improve your search engine rankings with less effort."
+    ></app-seo-automation>
+    <app-social-media-marketing
+      networkIcon="https://dashboard.codeparrot.ai/api/image/Z7Dph49nxTWt8i8E/gis-netw.png"
+      title="Social Media Marketing"
+      style="display: flex; flex-direction: row"
+      description="AI agents craft personalized content, schedule posts, monitor engagement, and refine strategies in real time for maximum impact across all major social platforms."
+    ></app-social-media-marketing>
+    <app-conversion-optimization
+      style="display: flex; flex-direction: row"
+    ></app-conversion-optimization>
+    <app-campaign-automation
+      iconSrc="https://dashboard.codeparrot.ai/api/image/Z7Dph49nxTWt8i8E/ic-round.png"
+      title="Campaign Automation"
+      style="display: flex; flex-direction: row"
+      description="Centralize and streamline your ad management. Our intelligent engine automatically adjusts bids, budgets, and targeting to maximize results."
+    ></app-campaign-automation>
+  </div>
+
+  <div
+    class="trial-button"
+    style="background: transparent"
+    [style.width.px]="width1"
+    [style.height.px]="height1"
+  >
+    <img [src]="particle1" class="particle particle-1" alt="particle" />
+    <img [src]="particle2" class="particle particle-2" alt="particle" />
+    <div class="text">Contact Us</div>
+    <!-- <div class="ellipse"></div> -->
+  </div>
+
+  <!-- Call to Action -->
+  <button class="services-button text-white px-6 py-3 mt-10 text-xs">
+    {{ text5 }}
+  </button>
+
+  <!-- Testimonials -->
+  <div class="feature-container" [style.gap.px]="gap">
+    <img [src]="line2Image" [style.width.px]="218" [style.height.px]="1" />
+    <div class="heading-text">
+      {{ text6 }}<br /><span class="span-text">{{ text7 }}</span>
+    </div>
+    <img [src]="line1Image" [style.width.px]="218" [style.height.px]="1" />
+  </div>
+  <div
+    style="
+      text-align: center;
+      color: #e2e8f8;
+      font-size: 16px;
+      font-family: Poppins;
+      font-weight: 400;
+      line-height: 22.4px;
+      word-wrap: break-word;
+    "
+  >
+    {{ text8 }}
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+    <div
+      style="
+        background: linear-gradient(
+          167.98deg,
+          rgba(11, 11, 11, 1) 4.68%,
+          rgba(19, 19, 19, 1) 91.22%
+        );
+      "
+      class="p-6 bg-gray-800 rounded-lg text-gray-300"
+      *ngFor="let testimonial of testimonials"
+    >
+      <p class="italic">"{{ testimonial.quote }}"</p>
+      <p class="mt-2 text-right text-sm">– {{ testimonial.author }}</p>
+    </div>
+  </div>
+
+  <button
+    class="services-button text-white px-6 py-3 mt-[10rem] text-xs w-[110px!important]"
+  >
+    Contact Us
+  </button>
+
+  <!-- Contact Section -->
+  <app-contact-us class="mt-20"></app-contact-us>
+
+  <!-- Final CTA -->
+  <h2 class="heading-text mb-5 text-xl text-white mt-20">
+    Are you ready to boost<br />
+    <span class="text-blue-500 font-bold">your Digital Presence?</span>
+  </h2>
+
+  <div class="flex flex-col space-y-4 mt-6">
+    <button class="trial-button text-white px-6 py-3">
+      {{ buttonText }}
+      <img [src]="particle1" class="particle particle-1" alt="particle" />
+      <img [src]="particle2" class="particle particle-2" alt="particle" />
+    </button>
+    <button
+      style="background: transparent"
+      class="trial-button text-white px-6 py-3 rounded-lg hover:bg-gray-800"
+    >
+      Schedule a Call
+    </button>
+  </div>
+</div>

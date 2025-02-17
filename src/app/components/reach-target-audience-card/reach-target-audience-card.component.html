@@ -1,0 +1,20 @@
+<div
+  class="card-container relative overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105"
+>
+  <div
+    class="background-ellipse absolute inset-0 bg-gradient-to-r opacity-50 animate-pulse"
+  ></div>
+  <div class="content-container relative z-10 p-6 flex flex-col items-center">
+    <!-- <img [src]="groupImage" alt="Group 12" class="group-image" /> -->
+    <img
+      [src]="componentImage"
+      alt="Component 29"
+      class="component-image w-full h-auto rounded-lg shadow-md transition-transform duration-500 ease-in-out transform hover:scale-105"
+    />
+    <div class="text-container mt-4 text-center">
+      <h2 class="title text-2xl font-semibold text-gray-900">{{ title }}</h2>
+      <p class="description text-lg text-gray-600 mt-2">{{ description }}</p>
+    </div>
+  </div>
+  <!-- <div class="accent-ellipse absolute inset-0 bg-white opacity-30"></div> -->
+</div>

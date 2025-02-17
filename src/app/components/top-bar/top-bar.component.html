@@ -1,0 +1,128 @@
+<!-- Navbar -->
+<nav class="text-white px-6 py-4">
+  <div
+    style="
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(92, 96, 105, 0.1);
+      backdrop-filter: blur(2.5px);
+      width: 1176px;
+      height: 63px;
+    "
+    class="flex justify-around items-center"
+  >
+    <!-- Logo -->
+    <div class="flex items-center">
+      <img
+        src="https://dashboard.codeparrot.ai/api/image/Z7BswY9nxTWt8i5e/ad-task-a.png"
+        alt="adTask.ai"
+        width="96"
+        height="20"
+      />
+    </div>
+
+    <!-- Hamburger Menu (Mobile & Tablet) -->
+    <div class="md:hidden">
+      <button (click)="toggleMenu()" class="focus:outline-none">
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex space-x-6">
+      <div class="flex items-center cursor-pointer hover:text-gray-300">
+        <span>Products</span>
+        <img
+          src="https://dashboard.codeparrot.ai/api/image/Z7BswY9nxTWt8i5e/arrow-dr.png"
+          alt="dropdown"
+          class="w-6 h-5 ml-2"
+        />
+      </div>
+
+      <div class="flex items-center cursor-pointer hover:text-gray-300">
+        <span>Tools</span>
+        <img
+          src="https://dashboard.codeparrot.ai/api/image/Z7BswY9nxTWt8i5e/arrow-dr-2.png"
+          alt="dropdown"
+          class="w-6 h-5 ml-2"
+        />
+      </div>
+
+      <div class="cursor-pointer hover:text-gray-300">Contact Us</div>
+    </div>
+
+    <!-- Action Buttons (Desktop) -->
+    <div class="hidden md:flex space-x-4">
+      <button
+        style="border-radius: 24px; border: 1px solid #7687b5"
+        class="px-6 py-2 border border-white rounded-full hover:bg-gray-800 transition"
+      >
+        Log in
+      </button>
+      <button
+        style="
+          border-radius: 24px;
+          border: 1px solid #7687b5;
+          background: rgba(118, 135, 181, 0.29);
+        "
+        class="px-6 py-2 bg-blue-600 rounded-full hover:bg-blue-700 transition"
+      >
+        Schedule a Call
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div *ngIf="isMenuOpen" class="mt-4 space-y-4 md:hidden">
+    <div class="flex flex-col items-center space-y-4">
+      <div class="flex items-center cursor-pointer hover:text-gray-300">
+        <span>Products</span>
+        <img
+          src="https://dashboard.codeparrot.ai/api/image/Z7BswY9nxTWt8i5e/arrow-dr.png"
+          alt="dropdown"
+          class="w-6 h-5 ml-2"
+        />
+      </div>
+
+      <div class="flex items-center cursor-pointer hover:text-gray-300">
+        <span>Tools</span>
+        <img
+          src="https://dashboard.codeparrot.ai/api/image/Z7BswY9nxTWt8i5e/arrow-dr-2.png"
+          alt="dropdown"
+          class="w-6 h-5 ml-2"
+        />
+      </div>
+
+      <div class="cursor-pointer hover:text-gray-300">Contact Us</div>
+
+      <button
+        class="w-full py-2 border border-white rounded-full hover:bg-gray-800 transition"
+      >
+        Log in
+      </button>
+      <button
+        style="
+          border-radius: 24px;
+          border: 1px solid #7687b5;
+          background: rgba(118, 135, 181, 0.29);
+        "
+        class="w-full py-2 rounded-full transition"
+      >
+        Schedule a Call
+      </button>
+    </div>
+  </div>
+</nav>

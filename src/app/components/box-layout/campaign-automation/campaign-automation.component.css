@@ -1,0 +1,81 @@
+.campaign-container {
+    width: 100%;
+    max-width: 338px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-width: 300px;
+    box-sizing: border-box;
+  }
+
+  .line {   
+    background: linear-gradient(90deg, #263048 0%, #5C73AE 51.5%, #263048 100%);
+    height: 1px;
+    width: 264px;
+    margin-bottom: 66px;
+  }
+
+  .line-bottom {
+    background: linear-gradient(90deg, #263048 0%, #5C73AE 51.5%, #263048 100%);
+    height: 1px;
+    width: 264px;
+    margin-top: 40px;
+  }
+
+  .line-vertical {
+    background: linear-gradient(90deg, #263048 0%, #5C73AE 51.5%, #263048 100%);
+    height: 264px;
+    width: 1px;
+    /* margin-right: 66px; */
+    margin-top: 35px;
+  }
+
+  .rectangle-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rectangle-line {
+    width: 32px;
+    height: 3px;
+    background-color: #d9d9d9;
+    margin-bottom: 20px;
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .campaign-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+
+  .title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+    line-height: 43.2px;
+    margin: 0 0 10px 0;
+  }
+
+  .description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    line-height: 15px;
+    width: 100%;
+    max-width: 324px;
+    margin: 0;
+  }
